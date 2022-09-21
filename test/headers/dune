@@ -1,4 +1,4 @@
 (executable
  (name headers)
  (libraries luv)
- (foreign_stubs (language c) (names headers)))
+ (foreign_stubs (language c) (names headers) (include_dirs (public_lib luv.c))))
