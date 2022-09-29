@@ -126,12 +126,12 @@ if not install_h then "" else
  (action (bash "\
   if [ '%{ocaml-config:ccomp_type}' = 'msvc' ]; then \
     %{cc} %{c} \
-    -I '%{lib:ctypes:.}' \
+    -I '%{headers:ctypes}' \
     -I %{ocaml_where} \
     |}^ i_option ^{| /Fe\"%{targets}\"; \
   else \
     %{cc} %{c} \
-    -I '%{lib:ctypes:.}' \
+    -I '%{headers:ctypes}' \
     -I %{ocaml_where} \
     |}^ i_option ^{| -o %{targets}; \
   fi")))
